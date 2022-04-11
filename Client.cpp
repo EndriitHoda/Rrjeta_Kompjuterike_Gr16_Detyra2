@@ -85,6 +85,126 @@ int main()
             exit(0);
         }
 
+else if (strcmp(message, "12345") == 0) {
+            //Receving first data from server as admin
+            char answer2[BUFLEN] = {};
+            int answer2_len;
+            int alen2 = sizeof(sockaddr_in);
+            if (answer2_len = recvfrom(client_socket, answer2, BUFLEN, 0, (sockaddr*)&server, &alen2) == SOCKET_ERROR)
+            {
+                printf("recvfrom() failed with error code: %d", WSAGetLastError());
+                exit(0);
+            }
+            printf("Server: %s\n", answer2);
+            //Chossing to read, write, or delete file
+            printf("Press the option you want to chose: ");
+            char message2[BUFLEN]={};
+            cin.getline(message2, BUFLEN);
+            //if choosing to write
+            if (strcmp(message2, "2") == 0) {
+               
+                if (sendto(client_socket, message2, strlen(message2), 0, (sockaddr*)&server, sizeof(sockaddr_in)) == SOCKET_ERROR)
+                {
+                    printf("sendto() failed with error code: %d", WSAGetLastError());
+                    return 3;
+                }
+                //Receving from server
+                char answer3[BUFLEN] = {};
+                int answer3_len;
+                int alen3 = sizeof(sockaddr_in);
+                if (answer3_len = recvfrom(client_socket, answer3, BUFLEN, 0, (sockaddr*)&server, &alen3) == SOCKET_ERROR)
+                {
+                    printf("recvfrom() failed with error code: %d", WSAGetLastError());
+                    exit(0);
+                }
+                printf("Server: %s\n", answer3);
+                //Chossing with which file to continue
+             
+                printf("Whith wich file do you want to continue: ");
+                char message3[BUFLEN] = {};
+                cin.getline(message3, BUFLEN);
+                if (sendto(client_socket, message3, strlen(message3), 0, (sockaddr*)&server, sizeof(sockaddr_in)) == SOCKET_ERROR)
+                {
+                    printf("sendto() failed with error code: %d", WSAGetLastError());
+                    return 3;
+                }
+                //Receving from server
+                char answer4[BUFLEN] = {};
+                int answer4_len;
+                int alen4 = sizeof(sockaddr_in);
+                if (answer4_len = recvfrom(client_socket, answer4, BUFLEN, 0, (sockaddr*)&server, &alen4) == SOCKET_ERROR)
+                {
+                    printf("recvfrom() failed with error code: %d", WSAGetLastError());
+                    exit(0);
+                }
+                printf("Server: %s\n", answer4);
+               
+                //Choose with which file to continue
+                printf("Write: ");
+                char message4[BUFLEN] = {};
+                cin.getline(message4, BUFLEN);
+                if (sendto(client_socket, message4, strlen(message4), 0, (sockaddr*)&server, sizeof(sockaddr_in)) == SOCKET_ERROR)
+                {
+                    printf("sendto() failed with error code: %d", WSAGetLastError());
+                    return 3;
+                }
+                //Receving from server
+                char answer5[BUFLEN] = {};
+                int answer5_len;
+                int alen5 = sizeof(sockaddr_in);
+                if (answer5_len = recvfrom(client_socket, answer5, BUFLEN, 0, (sockaddr*)&server, &alen5) == SOCKET_ERROR)
+                {
+                    printf("recvfrom() failed with error code: %d", WSAGetLastError());
+                    exit(0);
+                }
+                printf("Server: %s\n", answer5);
+             
+                exit(0);
+               
+
+
+            }
+
+            //IF choose to delete or read
+            else  {
+         
+            if (sendto(client_socket, message2, strlen(message2), 0, (sockaddr*)&server, sizeof(sockaddr_in)) == SOCKET_ERROR)
+            {
+                printf("sendto() failed with error code: %d", WSAGetLastError());
+                return 3;
+            }
+            //Receving from server
+            char answer6[BUFLEN] = {};
+            int answer6_len;
+            int alen6 = sizeof(sockaddr_in);
+            if (answer6_len = recvfrom(client_socket, answer6, BUFLEN, 0, (sockaddr*)&server, &alen6) == SOCKET_ERROR)
+            {
+                printf("recvfrom() failed with error code: %d", WSAGetLastError());
+                exit(0);
+            }
+            printf("Server: %s\n", answer6);
+            //Chossing with which file to continue
+            char message5[BUFLEN];
+            printf("With which file do you want to continue: ");
+            cin.getline(message5, BUFLEN);
+            if (sendto(client_socket, message5, strlen(message5), 0, (sockaddr*)&server, sizeof(sockaddr_in)) == SOCKET_ERROR)
+            {
+                printf("sendto() failed with error code: %d", WSAGetLastError());
+                return 3;
+            }
+            //Receving from server
+            char answer7[BUFLEN] = {};
+            int answer7_len;
+            int alen7 = sizeof(sockaddr_in);
+            if (answer7_len = recvfrom(client_socket, answer7, BUFLEN, 0, (sockaddr*)&server, &alen7) == SOCKET_ERROR)
+            {
+                printf("recvfrom() failed with error code: %d", WSAGetLastError());
+                exit(0);
+            }
+            printf("Server: %s\n", answer7);
+            exit(0);
+            }
+        }
 
 //
 
