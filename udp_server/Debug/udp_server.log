@@ -1,0 +1,4 @@
+﻿  udp_server.cpp
+C:\Users\Asus\source\repos\udp_server\udp_server.cpp(9,23): warning C4101: 'acceptSocket': unreferenced local variable
+C:\Users\Asus\source\repos\udp_server\udp_server.cpp(14,7): warning C4101: 'RecvBuf': unreferenced local variable
+  udp_server.vcxproj -> C:\Users\Asus\source\repos\udp_server\Debug\udp_server.exe
