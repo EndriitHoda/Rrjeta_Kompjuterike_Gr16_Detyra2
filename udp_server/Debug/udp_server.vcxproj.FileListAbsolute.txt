@@ -1,0 +1,2 @@
+C:\Users\Asus\source\repos\udp_server\Debug\udp_server.exe
+C:\Users\Asus\source\repos\udp_server\Debug\udp_server.pdb
